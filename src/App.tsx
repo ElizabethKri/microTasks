@@ -5,6 +5,8 @@ import {Footer} from "./site/Footer";
 import {NewComponent} from "./map/NewComponent";
 import {useState} from "react";
 import {Car} from "./map/Car";
+import {Button} from "./button/Button";
+import {Button2} from "./button/Button2";
 
 function App() {
 
@@ -21,6 +23,18 @@ function App() {
         {manufacturer:'Audi', model:'rs6'}
   ]
 
+ const Button1Foo = () => {
+      console.log('I am Liza')
+ }
+
+    const Button2Foo = (subscriber: string, age: number) => {
+        console.log(subscriber, age)
+    }
+
+    const Button3Foo = () => {
+      console.log("I am stuped")
+    }
+
   return (
       <>
         <Header title = {'New Header'}/>
@@ -28,6 +42,10 @@ function App() {
         <Footer titleforFooter={'New Footer'}/>
         <NewComponent students={students}/>
         <Car cars={topCars}/>
+        <Button/>
+        <Button2 name={'MyYoutubeChanel-1'} callBack={Button1Foo}/>
+        <Button2 name={'MyYoutubeChanel-2'} callBack={() =>Button2Foo('I am Nick', 21)}/>
+        <Button2 name={'Stuped'} callBack={Button3Foo}/>
       </>
   );
 }
