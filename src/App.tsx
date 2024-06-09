@@ -7,6 +7,8 @@ import {useState} from "react";
 import {Car} from "./map/Car";
 import {Button} from "./button/Button";
 import {Button2} from "./button/Button2";
+import {UseState} from "./useState/UseState";
+import {Filter} from "./filter/Filter";
 
 function App() {
 
@@ -46,6 +48,8 @@ function App() {
         <Button2 name={'MyYoutubeChanel-1'} callBack={Button1Foo}/>
         <Button2 name={'MyYoutubeChanel-2'} callBack={() =>Button2Foo('I am Nick', 21)}/>
         <Button2 name={'Stuped'} callBack={Button3Foo}/>
+        <UseState/>
+        <Filter/>
       </>
   );
 }
