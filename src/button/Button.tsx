@@ -25,10 +25,13 @@ export const Button = () => {
     }
 
     return <>
-        <button onClick={(event)=>{console.log('Hello!')}}>My youtube chanel-1</button>
+        <button onClick={onClickHandlerFoo1}>1</button>
+        <button onClick={(event) => onClickHandlerFoo2(100200)}>2</button>
+
+        <button onClick={(event) => {console.log('Hello!')}}>My youtube chanel-1
+        </button>
         <button onClick={event => onClickHandler('Ilia')}>My youtube chanel-2</button>
         <button onClick={event => onClickHandler('Ela')}>My youtube chanel-3</button>
-        <button onClick={onClickHandlerFoo1}>1</button>
-        <button onClick={(event)=>onClickHandlerFoo2(100200)}>2</button>
+
     </>
 }
