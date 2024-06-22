@@ -11,6 +11,8 @@ import {UseState} from './useState/UseState';
 import {Filter} from './filter/Filter';
 import {Filter1} from './filter/Filter1';
 import {FullInput} from './input/FullInput';
+import {Input} from './input/Input';
+import {ButtonInput} from './input/ButtonInput';
 
 function App() {
 
@@ -33,6 +35,9 @@ function App() {
         {message: "message3"},
     ])
 
+    let [title, setTitle] = useState('')
+    console.log(title)
+
     const Button1Foo = () => {
         console.log ('I am Liza')
     }
@@ -48,6 +53,11 @@ function App() {
     const addMessage= (title: string) => {
         let addMessage = {message: title}
         setMessage([addMessage, ...message])
+    }
+
+    const callBackButtonHandler = () => {
+        addMessage(title)
+        setTitle('')
     }
 
     return (
@@ -67,7 +77,9 @@ function App() {
         // </>
 
         <div style={{marginLeft: "15px"}}>
-            <FullInput addMessage = {addMessage}/>
+            {/*<FullInput addMessage = {addMessage}/>*/}
+            <Input title={title} setTitle={setTitle}/>
+            <ButtonInput name={"+"} callback={callBackButtonHandler}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
